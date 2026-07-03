@@ -18,11 +18,10 @@ document.querySelector("form").addEventListener("submit", function () {
   fields.forEach(function (field) {
     const question = field.getAttribute("data-question").trim();
     const answer = (field.value || "").trim();
-
     if (answer !== "") {
       parts.push(question + DELIM_QA + answer);
     }
   });
   const combined = parts.join(DELIM_PAIR);
-  document.getElementById("inquiry_contents").value = combined;
+  document.getElementById("Inquiry_Contents").value = combined;
 });
