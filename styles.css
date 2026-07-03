@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --colors--purple-500: #5b52ff;
+  --colors--purple-600: #4d34f4;
+  --colors--black: #0a0d14;
+  --colors--white: #ffffff;
+  --colors--grey: #71717a;
+  --colors--grey-light: #fafafa;
+  --colors--border: #e2e4e9;
+  --radius-8px: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: var(--colors--white);
+  color: var(--colors--black);
+  display: flex;
+  justify-content: center;
+  padding: 64px 20px;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 480px;
+}
+
+.form-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 12px;
+  color: var(--colors--black);
+  letter-spacing: -0.02em;
+}
+
+.form-subtext {
+  font-size: 1rem;
+  color: var(--colors--grey);
+  margin: 0 0 32px;
+  line-height: 1.5;
+}
+
+.field-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  color: var(--colors--black);
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.form-input {
+  width: 100%;
+  min-height: 3rem;
+  border: none;
+  border-bottom: 1px solid var(--colors--border);
+  font-size: 0.7rem;
+  font-family: "Inter", sans-serif;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--colors--purple-500);
+}
+
+.form-input::placeholder {
+  color: #c9c9c9;
+}
+
+.button {
+  width: 100%;
+  margin-top: 8px;
+  border: 1px solid var(--colors--purple-500);
+  background-color: var(--colors--purple-500);
+  color: var(--colors--white);
+  text-align: center;
+  border-radius: var(--radius-8px);
+  justify-content: center;
+  align-items: center;
+  padding: 0.875rem 1.125rem;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  line-height: 1.5;
+  cursor: pointer;
+  display: flex;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.button:hover {
+  background-color: var(--colors--purple-600);
+  border-color: var(--colors--purple-600);
+}
+
+/* Interests */
+.interests-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 520px) {
+  .interests-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.interest-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border: 1px solid var(--colors--border);
+  border-radius: var(--radius-8px);
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.interest-card:hover {
+  border-color: #c7c9ff;
+  background-color: #fafaff;
+}
+
+.interest-card.is-checked {
+  border-color: var(--colors--purple-500);
+  background-color: #f5f4ff;
+}
+
+.interest-card input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+  flex-shrink: 0;
+  border: 1.5px solid #b9bac2;
+  border-radius: 4px;
+  background-color: var(--colors--white);
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.interest-card input[type="checkbox"]:checked {
+  border-color: var(--colors--purple-500);
+  background-color: var(--colors--purple-500);
+}
+
+.interest-card input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.interest-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.interest-title {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--colors--black);
+  line-height: 1.4;
+}
+
+.interest-subtext {
+  font-size: 0.7rem;
+  color: var(--colors--grey);
+}
+
+.interest-info {
+  margin-left: auto;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: #c2c4cc;
+}
+
+.required-mark {
+  color: #e5484d;
+  margin-left: 2px;
+}
